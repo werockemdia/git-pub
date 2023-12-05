@@ -1,4 +1,35 @@
 # Starter pipeline
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+      $headers.Add("authority", "github.com")
+      $headers.Add("accept", "text/html")
+      $headers.Add("accept-language", "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7,mt;q=0.6")
+      $headers.Add("cookie", "_octo=GH1.1.123908254.1696533738; preferred_color_mode=light; tz=America%2FChicago; _device_id=049a4b8df84f4362f167e527a9b930d1; tz=America%2FChicago; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; saved_user_sessions=43180890%3AnEZUJl_AvB9nQDZvJqzpjA9EQoRjIfBKnGIwiJt5pe6xdGa3; user_session=nEZUJl_AvB9nQDZvJqzpjA9EQoRjIfBKnGIwiJt5pe6xdGa3; __Host-user_session_same_site=nEZUJl_AvB9nQDZvJqzpjA9EQoRjIfBKnGIwiJt5pe6xdGa3; logged_in=yes; dotcom_user=werockemdia; has_recent_activity=1; _gh_sess=GxDV4%2B5BkYrsD%2BBRYBZtq3GCxoJcKaM0SR3Y0fgC%2FOs5XGGA%2Bamdmdclr9RHtTs6ieb2DsKoykG4lvOqqeNa3DZtuTuj2XS%2BYsZeZXmufUdRjDa534rQVx%2F95LW%2F%2BCTg%2BtAvnxhgJkiBgN4%2Fo67wNvSDgpOxMnhBhJmrIMnwSTKIiOXhuggvz4HyHE9Sgu3p83MkldCJM7upXzs7Rny%2BC9GHrl5DCyC7KwcEncpBtoyCYKPuyMd0h4xSnxMoH2wFy76Y5sRjRZuocoXduHgiAWuZNIERGB3dY7AxvggtOPaLyrF2EcwX6XvUjKFzUbfAQbFJH61X8w13%2FyICZlO9FBalXl3Y0zqEr8hl4F3QV%2B1Kf5tf01ChTAIaCsvVRZld8z8Pawf0VTI1AEWYr9T0bnwLDLPDLFQEaQjter3wOb4fg21tdpwNgXS34O9F2d5cx7TfCLYfseFWt28vBodNO01QjQtudgfNTSYwV%2B1OQG%2B9dwYZInkL%2BJjGc%2FYy5QAAz7ydNEC7JjtA3v7pSOCobg%3D%3D--KmzOF%2BvOFxIwlY5P--6T9wI32y3qHIrWIQ%2BKK9FQ%3D%3D; _gh_sess=8Wq%2B2AtaH7ZVnNn8NRSWykh9wwtHBFOKrvmAQHG9KzAZNZUMca8dYuKiBrAvcPoFPwL7DZBCFIoa8r9mXht6JxGvYGW8caDT7zKDCeMP5%2BiWdR7BYMgQj4jkWXfMCXmPnHCDUE0voqsidJ6ZjDH79%2FbptwdyD2FxpmMqtY4%2BFbhoLZCL77sXeDo7%2BMS6hu7P7868JGMv47xdixxD0jw888Cy26r5CHjVtssoL56FuAMIKqGM2yIJ71dxbnTZKd9HKVq66EkxuGiEsSf8W0Oxv4mD6wBTmlON%2BR%2BQo7uwq%2B%2FUiTfOH5czYxy%2Fw1r44%2BT91731Ws48vM4aWirAQqwcNxvutnwplDkejVs9O7iQmIXxuvi1%2BTE9gmEc5mdl0GhgYvtbpLBZj%2BH4MvC5Cswq2stPCVHWMY7HN31uF5VSHZTrari%2BXMnVyalGEeO4DK4%2B5NHixL6yR7B6%2BFVteCFuVpmlNhFhmpUOYm8C0WaQZ0YNOx6dePgM71o2LMnfHLFfoQq2Q0keg168vmYBiWaWS8XKmmqyxvqAH6uOhXwoWZEdKgTjviw8v784OB3pPaSp%2FuW65e6KQ7WOTJ1q4KCi1ZXh0vtlN9bAxVAh6SWZah2sSN1Mf7GKUBcC5ybhtSEfyGe3CokP4CIa1ralM1z1uKpQOlWpmo%2FbYXDAUpPEeUYirc1e--AZznEW%2B%2BpUGlZKLs--EXNq%2BioIxMlfSqVNrcO%2Blg%3D%3D; has_recent_activity=1")
+      $headers.Add("origin", "https://github.com")
+      $headers.Add("referer", "https://github.com/werockemdia/git-pub/settings/hooks/447165660?tab=deliveries")
+      $headers.Add("sec-ch-ua", "`"Google Chrome`";v=`"119`", `"Chromium`";v=`"119`", `"Not?A_Brand`";v=`"24`"")
+      $headers.Add("sec-ch-ua-mobile", "?0")
+      $headers.Add("sec-ch-ua-platform", "`"macOS`"")
+      $headers.Add("sec-fetch-dest", "empty")
+      $headers.Add("sec-fetch-mode", "cors")
+      $headers.Add("sec-fetch-site", "same-origin")
+      $headers.Add("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36")
+      $headers.Add("x-requested-with", "XMLHttpRequest")
+      
+      $multipartContent = [System.Net.Http.MultipartFormDataContent]::new()
+      $stringHeader = [System.Net.Http.Headers.ContentDispositionHeaderValue]::new("form-data")
+      $stringHeader.Name = "authenticity_token"
+      $stringContent = [System.Net.Http.StringContent]::new("UrBwG8Ba8Ef3o4bAo67-DYrD9w8EcJ4GgGvkZPUmJzXuuybR0phJaKSLTfgVc8RT-bLjluND9tlqbCZuWoGn7Q")
+      $stringContent.Headers.ContentDisposition = $stringHeader
+      $multipartContent.Add($stringContent)
+      
+      $body = $multipartContent
+      
+      $response = Invoke-RestMethod 'https://github.com/hooks/447165660/deliveries/1a9f6180-939f-11ee-8eb8-ced744187b13/redeliver' -Method 'POST' -Headers $headers -Body $body
+      $response | ConvertTo-Json
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
